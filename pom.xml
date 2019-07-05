@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>de.juli</groupId>
+	<artifactId>newjob</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+		<name>${app.name}</name>
+
+	<modules>
+		<module>newjobcontroller</module>
+		<module>newjobrecource</module>
+	</modules>
+
+	<properties>
+		<app.name>newjob</app.name>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<version.parent>${project.version}</version.parent>
+		<version.slf4j>1.8.0-beta0</version.slf4j>
+		<version.junit>4.12</version.junit>
+		<version.logger>1.7.5</version.logger>
+		<version.spring>2.1.6.RELEASE</version.spring>
+		<version.junit>4.12</version.junit>
+		<version.jsf>2.2.8</version.jsf>
+		<version.bootsfaces>1.4.1</version.bootsfaces>
+		<version.persistence>2.5.0</version.persistence>
+		<version.spring>2.1.6.RELEASE</version.spring>
+		<maven.build.timestamp.format>ddMMyyyy</maven.build.timestamp.format>
+	</properties>
+	
+	<dependencyManagement>
+		<dependencies>
+			<!-- logger -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${version.logger}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${version.logger}</version>
+			</dependency>
+
+			<!-- Spring -->
+			<dependency>
+				<!-- Import dependency management from Spring Boot -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${version.spring}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+			<!-- JUnit -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${version.junit}</version>
+			</dependency>
+
+			<!-- Web -->
+			<dependency>
+				<groupId>com.sun.faces</groupId>
+				<artifactId>jsf-api</artifactId>
+				<version>${version.jsf}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.sun.faces</groupId>
+				<artifactId>jsf-impl</artifactId>
+				<version>${version.jsf}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.bootsfaces</groupId>
+				<artifactId>bootsfaces</artifactId>
+				<version>${version.bootsfaces}</version>
+			</dependency>
+
+			<!-- persistence -->
+			<dependency>
+				<groupId>org.eclipse.persistence</groupId>
+				<artifactId>eclipselink</artifactId>
+				<version>${version.persistence}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+		</dependency>
+	</dependencies>
+
+</project>
